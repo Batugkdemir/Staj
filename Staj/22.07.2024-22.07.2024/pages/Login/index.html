@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Sayfası</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>   
+        body {
+            background-image: url('/assets/background.jpg');
+            background-size: cover;
+            padding-top: 300px; 
+        }
+        .container {
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+        .login-box {
+            background-image: url('/pages/basari-logo.png');
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 40px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-box input[type="text"], 
+        .login-box input[type="password"] {
+            width: calc(100% - 0px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 18px;
+        }
+        .login-box button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: rgb(190, 220, 141);
+            color: #ffffff;
+            border-radius: 8px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .login-box button:hover {
+            background-color: #77ad7a;
+        }
+        .giris{
+            color: rgb(23, 23, 114);
+            font-size: 35px;
+            padding:unset;
+            margin-left: 35%;
+        }
+        a{
+            padding-left: 0;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar fixed-top">
+        <a class="navbar-brand" href="../Home/index.html">Anasayfa</a> 
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="Login/index.html">Giriş</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    <div class="login-box">
+        <div class="giris">.</div>
+        <input type="text" id="username" placeholder="Kullanıcı Adı" required>
+        <input type="password" class="login-input" id="password" name="password" pattern="^[A-Z].*[.!?]$" title="Şifreniz büyük harfle başlamalı ve nokta, ünlem veya soru işaretiyle bitmelidir" placeholder="Şifre" required>
+        <button onclick="login()">Giriş</button>
+    </div>
+
+    <script>
+        function login() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var minULength= 3;
+            var minLength = 8;
+            var maxLength = 11;
+            var hata1 = "Kullanıcı adı en az 3 en çok 8 karakter olmalıdır.";
+            var hata2 = "Şifre en az 8 en çok 11 karakterli olmalıdır, büyük harfle başlamalı ve '.?!+-' karakterlerinden biriyle bitmelidir.";
+            var d0ru = "Hoş Geldiniz"
+            if(username.length >= minULength && username.length <= minLength) 
+                {if (password.length >= minLength && password.length <= maxLength && password.match(/^[A-Z].*[.?!+-]$/))  {alert(d0ru)}  else{alert(hata2)}} 
+            else{alert(hata1)}
+        }
+    </script>
+</body>
+</html>

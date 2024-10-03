@@ -1,0 +1,83 @@
+.sidebar{
+    top: 0;
+    left: 0;
+    padding: 10px;
+    width: 250px;
+    height: 50px;
+}
+.sidebardis{
+    background-color: #223170;
+    padding: 21px;
+    color: white;
+    top: 0;
+    left: 0;
+    font-weight: bold;
+    position: fixed;
+    text-align: center;
+    font-size: x-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.sidebaric{
+    left: 10px;
+    background-color: #bedc8d;
+    padding: 21px;
+    color: black;
+    position: fixed;
+    left: 146px;
+    font-weight: bold;
+    top: 0;
+    text-align: center;
+    font-size: x-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.sidebaralt{
+    left: 0px;
+    top: 66px;
+    width: 287px;
+    background-color: black;
+    font-weight: bold;
+    color: white;
+    font-size: large;
+    padding: 5px;
+    line-height: 1.7rem;
+    text-align: center;
+    position: fixed;
+}
+.hotmail{
+    padding: 21px;
+    color: rgb(13, 202, 240);
+    position: fixed;
+    right: 220px;
+    font-weight: bold;
+    top: 2px;
+    text-align: center;
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.logout {
+    padding: 21px;
+    color: rgb(220, 53, 69);
+    position: fixed;
+    right: 0;
+    font-weight: bold;
+    top: 2px;
+    text-align: center;
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.barbara{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    line-height: 3rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: large;
+    text-align: center;
+    padding: 1rem 6.1rem;
+    background-color: #2e3a42;
+    color: #bedc8d;
+    
+}
+a{
+    text-decoration: none;
+}

@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    height: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: rgba(215, 255, 212, 0.8); 
+    padding: 20px;
+    border-radius: 10px; 
+    text-align: center; 
+}

@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    font-family: var(--bs-body-font-family);
+    font-size: var(--bs-body-font-size);
+    font-weight: var(--bs-body-font-weight);
+    line-height: var(--bs-body-line-height);
+    color: var(--bs-body-color);
+    text-align: var(--bs-body-text-align);
+    background-color: var(--bs-body-bg);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+.loginbox{
+    padding: 20px;
+    bottom: 20px;
+    border-radius: 10px;
+}
+.loginbox button{
+    margin-top: 50px;
+    padding: 15px;
+    background-color: #28a745;
+    color: white;
+    width: 100%;
+    font-size: large;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px;
+}
+.error-message {
+    color: red;
+    font-size: 14px;
+    display: none;
+}
+.loginbox input{
+    padding: 15px;
+    width: 100%;
+}

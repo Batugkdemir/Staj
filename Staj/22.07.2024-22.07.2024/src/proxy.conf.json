@@ -1,0 +1,44 @@
+{
+    "/dwdsapi/*": {
+        "target": "http:localhost:8083/api/auth",
+        "secure": false,
+        "logLevel": "debug",
+        "changeorigin": true,
+        "pathRewrite":{
+        "^/dwdsapi":""
+        }
+    },
+
+
+
+    "/pwpsapi/*": {
+        "target": "http:localhost6352:/pages/Logins",
+        "secure": false,
+        "logLevel": "debug",
+        "changeorigin": true,
+        "pathRewrite":{
+        "^/pwpsapi":""
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

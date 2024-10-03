@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hava Durumu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        #weather {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hava Durumu Uygulaması</h1>
+    <input type="text" id="city" placeholder="Şehir adı girin">
+    <button onclick="getWeather()">Hava Durumunu Göster</button>
+    <div id="weather"></div>
+
+    <script>
+        async function getWeather() {
+            const apiKey = '7e02a0381c13dc209674dd8f9dd1f1b2'; // Buraya OpenWeatherMap API anahtarınızı girin
+            const city = document.getElementById('city').value;
+            if (!city) {
+                alert('Lütfen bir şehir adı girin');
+                return;
+            }
+
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=tr`;
+
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error('Şehir bulunamadı');
+                const data = await response.json();
+
+                const weather = document.getElementById('weather');
+                weather.innerHTML = `
+                    <h2>${data.name}, ${data.sys.country}</h2>
+                    <p><strong>Sıcaklık:</strong> ${data.main.temp} °C</p>
+                    <p><strong>Hava Durumu:</strong> ${data.weather[0].description}</p>
+                    <p><strong>Nem:</strong> ${data.main.humidity}%</p>
+                    <p><strong>Rüzgar Hızı:</strong> ${data.wind.speed} m/s</p>
+                `;
+            } catch (error) {
+                alert(error.message);
+            }
+        }
+    </script>
+</body>
+</html>

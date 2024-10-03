@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Başarılı</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .email-form {
+            width: 300px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Giriş Başarılı</h2>
+        <p>E-posta göndermek için aşağıdaki formu kullanabilirsiniz.</p>
+        <div class="email-form">
+            <form action="mailto:destek@example.com" method="post" enctype="text/plain">
+                <label for="subject">Konu:</label><br>
+                <input type="text" id="subject" name="subject" value="Giriş Başarılı Bildirimi"><br>
+                <label for="message">Mesaj:</label><br>
+                <textarea id="message" name="message" rows="4" cols="30">Merhaba,
+
+Giriş işlemi başarıyla tamamlandı.
+
+Saygılarımla,</textarea><br><br>
+                <input type="submit" value="E-posta Gönder" class="btn">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
