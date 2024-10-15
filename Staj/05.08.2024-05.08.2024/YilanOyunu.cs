@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 
-class Program
+class Game
 {
     static void Main()
     {
