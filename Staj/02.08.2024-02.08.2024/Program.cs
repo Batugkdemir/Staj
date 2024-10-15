@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace deneme2
+namespace game
 {
     internal class Program
     {
