@@ -7,14 +7,12 @@ class Game
 {
     static void Main()
     {
-        Console.WindowHeight = 20; // Konsol yüksekliği
-        Console.WindowWidth = 40;  // Konsol genişliği
-
-        // Yılan ve yem için başlangıç konumları
+        Console.WindowHeight = 20; 
+        Console.WindowWidth = 40;  
         List<Position> snake = new List<Position> { new Position(5, 5) };
         Position food = GenerateFood(snake);
         int score = 0;
-        char direction = 'D'; // Başlangıç yönü (D = sağ)
+        char direction = 'D'; 
 
         while (true)
         {
@@ -23,30 +21,27 @@ class Game
             if (Console.KeyAvailable)
             {
                 ConsoleKeyInfo keyInfo = Console.ReadKey(true);
-                // Yön değişikliği
                 if (keyInfo.Key == ConsoleKey.UpArrow && direction != 'D') direction = 'U';
                 else if (keyInfo.Key == ConsoleKey.DownArrow && direction != 'U') direction = 'D';
                 else if (keyInfo.Key == ConsoleKey.LeftArrow && direction != 'R') direction = 'L';
                 else if (keyInfo.Key == ConsoleKey.RightArrow && direction != 'L') direction = 'R';
             }
 
-            // Yılanın yeni baş pozisyonunu hesapla
+            
             Position head = MoveSnake(snake, direction);
 
-            // Yemi yedi mi kontrol et
             if (head.X == food.X && head.Y == food.Y)
             {
                 score++;
-                snake.Add(food); // Yemi yediğinde yılan büyür
-                food = GenerateFood(snake); // Yeni yem oluştur
+                snake.Add(food); 
+                food = GenerateFood(snake); 
             }
             else
             {
                 snake.Insert(0, head);
-                snake.RemoveAt(snake.Count - 1); // Yılanın sonunu kes
+                snake.RemoveAt(snake.Count - 1); 
             }
 
-            // Oyun sonu kontrolü
             if (IsGameOver(snake))
             {
                 Console.Clear();
@@ -54,24 +49,21 @@ class Game
                 break;
             }
 
-            Thread.Sleep(200); // Yılanın hareket hızı
+            Thread.Sleep(200); 
         }
     }
 
     static void DrawGame(List<Position> snake, Position food, int score)
     {
-        // Yılanı çiz
         foreach (var segment in snake)
         {
             Console.SetCursorPosition(segment.X, segment.Y);
             Console.Write("■");
         }
         
-        // Yemi çiz
         Console.SetCursorPosition(food.X, food.Y);
         Console.Write("●");
 
-        // Skoru yazdır
         Console.SetCursorPosition(0, 0);
         Console.WriteLine("Skor: " + score);
     }
@@ -96,18 +88,16 @@ class Game
         do
         {
             food = new Position(rand.Next(1, 38), rand.Next(1, 18));
-        } while (snake.Any(s => s.X == food.X && s.Y == food.Y)); // Yılanın üstüne düşmemesi için
+        } while (snake.Any(s => s.X == food.X && s.Y == food.Y)); 
         return food;
     }
 
     static bool IsGameOver(List<Position> snake)
     {
         Position head = snake.First();
-        // Kendine çarpma kontrolü
         if (snake.Skip(1).Any(s => s.X == head.X && s.Y == head.Y))
             return true;
 
-        // Duvara çarpma kontrolü
         if (head.X < 0 || head.X >= Console.WindowWidth || head.Y < 0 || head.Y >= Console.WindowHeight)
             return true;
 
