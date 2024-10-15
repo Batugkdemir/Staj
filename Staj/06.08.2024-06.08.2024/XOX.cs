@@ -16,7 +16,16 @@ class HelloWorld {
         if(numbers[satır-1,sutun-1]==' ')
         {
             if(hamle == 'X' || hamle == 'O')
-            {numbers[satır-1,sutun-1]=hamle;}
+            {
+                numbers[satır-1,sutun-1]=hamle;
+                if (CheckWin(numbers, hamle))
+                {
+                    Console.Clear();
+                    DrawBoard(numbers);
+                    Console.WriteLine($"Tebrikler! {hamle} kazandı!");
+                    break;
+                }
+            }
             else
             {
                 Console.WriteLine("Lütfen X veya O Giriniz");
